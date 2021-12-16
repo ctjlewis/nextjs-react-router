@@ -1,0 +1,40 @@
+{
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "next",
+    "next/core-web-vitals"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "rules": {
+
+    /**
+     * For a Chrome extension, we are using `next export`, and cannot use
+     * next/image to optimize images.
+     */
+    "@next/next/no-img-element": "off",
+
+    "indent": "off",
+    "@typescript-eslint/indent": ["error", 2],
+
+    "semi": "off",
+    "@typescript-eslint/semi": ["error", "always"],
+
+    "quotes": "off",
+    "@typescript-eslint/quotes": ["error", "double"],
+
+    "object-curly-spacing": "off",
+    "@typescript-eslint/object-curly-spacing": ["error", "always"],
+
+    "sort-imports": [
+      "warn",
+      {
+        "ignoreCase": false,
+        "ignoreDeclarationSort": false,
+        "ignoreMemberSort": true,
+        "memberSyntaxSortOrder": ["none", "all", "multiple", "single"],
+        "allowSeparatedGroups": true
+      }
+    ]
+  }
+}

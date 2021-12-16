@@ -1,5 +1,5 @@
-import React from 'react';
-import NextLink from 'next/link';
+import NextLink from "next/link";
+import React from "react";
 
 export default function App(props: { message: string }) {
   return (
@@ -11,5 +11,5 @@ export default function App(props: { message: string }) {
 }
 
 export const getServerSideProps = () => {
-  return { props: { message: 'This page is rendered on the server!' } };
+  return { props: { message: "This page is rendered on the server!" } };
 };
