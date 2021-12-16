@@ -1,15 +1,22 @@
-import NextLink from "next/link";
+import Link from "next/link";
 import React from "react";
 
-export default function App(props: { message: string }) {
+export default function SettingsPage(props: { message: string }) {
   return (
     <div>
       <p>{props.message}</p>
-      <NextLink href="/">Home</NextLink>
+      <Link href="/">Home</Link>
     </div>
   );
 }
 
-export const getServerSideProps = () => {
+export const getStaticProps = () => {
   return { props: { message: "This page is rendered on the server!" } };
 };
+
+/**
+ * Won't work with `next export`.
+ */
+// export const getServerSideProps = () => {
+//   return { props: { message: "This page is rendered on the server!" } };
+// };

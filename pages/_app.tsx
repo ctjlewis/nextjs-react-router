@@ -6,7 +6,7 @@ import { BrowserRouter } from "react-router-dom";
  * A single-page application with full next/link support.
  */
 const SPA = ({ Component, pageProps }: AppProps) => {
-  const [mounted, setMounted] = useState(typeof window !== "undefined");
+  const [mounted, setMounted] = useState(false);
   /**
    * On the first render, mark the component as mounted.
    */
