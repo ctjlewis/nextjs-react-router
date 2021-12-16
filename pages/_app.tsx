@@ -5,7 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 /**
  * A single-page application with full next/link support.
  */
-const SPA = ({ Component: PageComponent, pageProps }: AppProps) => {
+const SPA = ({ Component, pageProps }: AppProps) => {
   /**
    * Mark the component as mounted once it has rendered in the browser.
    */
@@ -18,8 +18,7 @@ const SPA = ({ Component: PageComponent, pageProps }: AppProps) => {
   return (
     mounted &&
       <BrowserRouter>
-        {/* Render the given page. */}
-        <PageComponent {...pageProps} />
+        <Component {...pageProps} />
       </BrowserRouter>
   );
 };
