@@ -8,12 +8,12 @@ import { BrowserRouter } from "react-router-dom";
 const SPA = ({ Component, pageProps }: AppProps) => {
   const [mounted, setMounted] = useState(false);
   /**
-   * On the first render, mark the component as mounted.
+   * Whether or not the component is rendering in the browser.
    */
   useEffect(() => setMounted(true), []);
   /**
-   * If the component is mounted, it is wrapped with a BrowserRouter and passed
-   * the given routes.
+   * If the component is being rendered in the browser, it is wrapped with a
+   * BrowserRouter to override link clicks.
    */
   return (
     mounted &&
