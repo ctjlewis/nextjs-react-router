@@ -1,7 +1,10 @@
-import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { AppProps } from "next/app";
+import { BrowserRouter } from "react-router-dom";
 
+/**
+ * A single-page application with full next/link support.
+ */
 const SPA = ({ Component, pageProps }: AppProps) => {
   /**
    * Whether or not the component is rendering in the DOM.
@@ -23,4 +26,5 @@ const SPA = ({ Component, pageProps }: AppProps) => {
       </BrowserRouter>
   );
 };
+
 export default SPA;
