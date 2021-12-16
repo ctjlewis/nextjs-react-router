@@ -1,14 +1,20 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { createElement, useEffect, useState } from "react";
 import { AppProps } from "next/app";
 
-const App = ({ Component, pageProps }: AppProps) => {
-
+const SPA = ({ Component, pageProps }: AppProps) => {
+  /**
+   * Whether or not the component is rendering in the DOM.
+   */
   const [mounted, setMounted] = useState(false);
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
+  /**
+   * On the first render, mark the component as mounted.
+   */
+  useEffect(() => setMounted(true), []);
+  /**
+   * If the component is mounted, it is wrapped with a BrowserRouter and passed
+   * the given routes.
+   */
   return (
     mounted &&
       <BrowserRouter>
@@ -24,10 +30,9 @@ const App = ({ Component, pageProps }: AppProps) => {
           </Route>
         </Switch>
 
-        <div suppressHydrationWarning>
-          <Component {...pageProps} />
-        </div>
+        {/* Render the given component. */}
+        <Component {...pageProps} />
       </BrowserRouter>
   );
 };
-export default App;
+export default SPA;
