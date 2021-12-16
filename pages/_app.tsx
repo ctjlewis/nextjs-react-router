@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { createElement, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { AppProps } from "next/app";
 
 const SPA = ({ Component, pageProps }: AppProps) => {
