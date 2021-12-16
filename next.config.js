@@ -1,11 +1,15 @@
 module.exports = {
   async rewrites() {
     return [
-      // Rewrite everything else to use `pages/index`
+      /**
+       * All paths redirect back to root.
+       */
       {
-        source: '/:path*',
-        destination: '/',
+        source: "/:path*",
+        destination: "/",
       },
     ];
   },
+  swcLoader: true,
+  swcMinify: true,
 };
