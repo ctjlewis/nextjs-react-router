@@ -5,12 +5,18 @@
     "next/core-web-vitals"
   ],
   "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint"],
+  "plugins": [
+    "@typescript-eslint",
+    "react-hooks"
+  ],
   "rules": {
 
+    "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
+    "react-hooks/exhaustive-deps": "warn", // Checks effect dependencies
+
     /**
-     * For a Chrome extension, we are using `next export`, and cannot use
-     * next/image to optimize images.
+     * For an SPA, we are using `next export`, and cannot use next/image to
+     * optimize images.
      */
     "@next/next/no-img-element": "off",
 

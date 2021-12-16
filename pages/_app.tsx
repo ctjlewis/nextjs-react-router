@@ -6,10 +6,7 @@ import { BrowserRouter } from "react-router-dom";
  * A single-page application with full next/link support.
  */
 const SPA = ({ Component, pageProps }: AppProps) => {
-  /**
-   * Whether or not the component is rendering in the DOM.
-   */
-  const [mounted, setMounted] = useState(false);
+  const [mounted, setMounted] = useState(typeof window !== "undefined");
   /**
    * On the first render, mark the component as mounted.
    */
