@@ -1,20 +1,17 @@
-import { Link } from "react-router-dom";
-import NextLink from "next/link";
+import Link from "next/link";
 
 export default function IndexPage() {
   return (
     <ul>
+      <h1>Pages</h1>
       <li>
-        <Link to="/">Home</Link>
+        <Link href="/about">About</Link>
       </li>
       <li>
-        <Link to="/about">About</Link>
+        <Link href="/topics">Topics</Link>
       </li>
       <li>
-        <Link to="/topics">Topics</Link>
-      </li>
-      <li>
-        <NextLink href="/settings">Settings (SSR)</NextLink>
+        <Link href="/settings">Settings (SSR)</Link>
       </li>
     </ul>
   );

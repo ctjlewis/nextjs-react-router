@@ -18,18 +18,6 @@ const SPA = ({ Component, pageProps }: AppProps) => {
   return (
     mounted &&
       <BrowserRouter>
-        <Switch>
-          <Route path="/about">
-            <h1>About</h1>
-          </Route>
-          <Route path="/topics">
-            <h1>Topics</h1>
-          </Route>
-          <Route path="/">
-            <h1>Home</h1>
-          </Route>
-        </Switch>
-
         {/* Render the given component. */}
         <Component {...pageProps} />
       </BrowserRouter>
