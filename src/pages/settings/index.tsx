@@ -1,18 +1,18 @@
 import Link from "next/link";
 import React from "react";
 
-export default function SettingsPage(props: { message: string }) {
+export default function SettingsPage({ message = "Settings" }) {
   return (
     <div>
-      <p>{props.message}</p>
+      <p>{message}</p>
       <Link href="/">Home</Link>
     </div>
   );
 }
 
-export const getStaticProps = () => {
-  return { props: { message: "This page is rendered on the server!" } };
-};
+// export const getStaticProps = () => {
+//   return { props: { message: "This page is rendered on the server!" } };
+// };
 
 /**
  * Won't work with `next export`.

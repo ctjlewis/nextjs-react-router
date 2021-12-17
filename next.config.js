@@ -1,11 +1,14 @@
 module.exports = {
   async rewrites() {
     return [
-      /**
-       * All paths redirect back to root.
-       */
+      // Do not rewrite API routes
       {
-        source: "/:path*",
+        source: "/api/:any*",
+        destination: "/api/:any*",
+      },
+      // Rewrite everything else to use `pages/index`
+      {
+        source: "/:any*",
         destination: "/",
       },
     ];
