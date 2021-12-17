@@ -1,6 +1,5 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import dynamic from "next/dynamic";
-import glob from "glob";
 
 /**
  * An index page which client-side renders a page based on browser location.
@@ -33,8 +32,6 @@ export default function SinglePageIndex(props: { pages: string[] }) {
   );
 }
 
-// export default dynamic(() => Promise.resolve(SinglePageIndex));
-
 const NEXT_INTERNAL_ROUTES = [
   "_app",
   "_document",
@@ -43,6 +40,8 @@ const NEXT_INTERNAL_ROUTES = [
 ];
 
 export const getStaticProps = async () => {
+  const { default: glob } = await import("glob");
+
   if (typeof window === "undefined") {
     const files = glob.sync("**/*.js", { cwd: __dirname });
     const pages =
