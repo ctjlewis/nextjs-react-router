@@ -11,6 +11,9 @@ export default function IndexPage() {
         <Link href="/topics">Topics</Link>
       </li>
       <li>
+        <Link href="/subdir/subdir">Subdirectory</Link>
+      </li>
+      <li>
         <Link href="/settings">Settings (SSR)</Link>
       </li>
     </ul>
