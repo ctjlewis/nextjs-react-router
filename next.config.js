@@ -13,6 +13,9 @@ module.exports = {
       },
     ];
   },
+  devServer: {
+    writeToDisk: true,
+  },
   swcLoader: true,
   swcMinify: true,
 };
